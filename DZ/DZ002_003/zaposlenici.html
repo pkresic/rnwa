@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+    <title>AdventureWorks</title>
+</head>
+<script>
+    function showResults(str) {
+        fetch("/DZ/DZ002/djelatnik_search.php?s=" + (str ? str : ""))
+            .then(function (response) {
+                if (response.ok) {
+                    response.text().then(function (data) {
+                        document.getElementById("result").innerHTML = data;
+                    })
+                }
+            });
+    }
+</script>
+<body>
+<div class="header">
+    <div id="logo-field">
+        <h2>AdventureWorks</h2>
+    </div>
+    <div id="login-field">
+        <div class="buttons">
+            <div class="button">PRIJAVA</div>
+            <div class="button">REGSTRACIJA</div>
+        </div>
+    </div>
+</div>
+<div class="navbar">
+    <a href="/DZ/DZ002_001/zaposlenici.html" class="navbar-item">ZAPOSLENICI 1</a>
+    <a href="/DZ/DZ002_002/zaposlenici.html" class="navbar-item">ZAPOSLENICI 2</a>
+    <a href="/DZ/DZ002_003/zaposlenici.html" class="navbar-item">ZAPOSLENICI 3</a>
+</div>
+<div class="row">
+    <div class="col-9 col-s-8">
+        <div class="main">
+            <div class="search-bar">
+                <label for="search"></label><input id="search" type="search" autocomplete="off"/>
+                <button onclick="showResults(document.getElementById('search').value)">
+                    SEARCH
+                </button>
+            </div>
+            <table>
+                <thead>
+                <th>Ime</th>
+                <th>Spol</th>
+                <th>Email</th>
+                </thead>
+                <tbody id="result">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-3 col-s-4">
+        <div class="aside">
+            <h2>Lorem</h2>
+            <p>Integer porta lectus in felis suscipit malesuada. Praesent convallis lectus ac risus cursus sagittis.
+                Aliquam ullamcorper nisl quis nulla finibus, at viverra odio sagittis. Cras varius est id odio
+                vulputate, non molestie nibh molestie. Fusce ac interdum est. Etiam felis erat, rutrum quis sagittis ut,
+                auctor vitae tortor. Integer auctor elit bibendum ex ultricies varius. Nam ut diam bibendum, pharetra
+                ipsum eget, ullamcorper risus. Suspendisse ut turpis eget lacus sollicitudin ullamcorper nec sed
+                risus.</p>
+            <h2>Ipsum</h2>
+            <p>Integer porta lectus in felis suscipit malesuada. Praesent convallis lectus ac risus cursus sagittis.
+                Aliquam ullamcorper nisl quis nulla finibus, at viverra odio sagittis. Cras varius est id odio
+                vulputate, non molestie nibh molestie. Fusce ac interdum est. Etiam felis erat, rutrum quis sagittis ut,
+                auctor vitae tortor. Integer auctor elit bibendum ex ultricies varius. Nam ut diam bibendum, pharetra
+                ipsum eget, ullamcorper risus. Suspendisse ut turpis eget lacus sollicitudin ullamcorper nec sed
+                risus.</p>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <h5><a class="mail" href="mailto:anaseser1996@gmail.com" title="anaseser1996@gmail.com">Ana Seser</a> | <a
+            class="mail" href="mailto:petra.kresic96@gmail.com" title="petra.kresic96@gmail.com">Petra Kresic</a></h5>
+    <div class="buttons">
+        <a class="button" href="https://github.com/pkresic/rnwa" target="_blank">GitHub</a>
+    </div>
+</div>
+</body>
+<script>
+    showResults("");
+</script>
+</html>
