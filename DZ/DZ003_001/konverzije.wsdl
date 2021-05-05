@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<definitions name="KonverzijeValuta" targetNamespace="urn:KonverzijeValuta" xmlns:tns="urn:KonverzijeValuta"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+             xmlns="http://schemas.xmlsoap.org/wsdl/">
+    <types>
+        <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:Konverzije">
+            <xsd:element name="Currency" type="xsd:float"/>
+        </xsd:schema>
+    </types>
+
+    <message name="konverzijaRequest">
+        <part name="value" type="tns:Currency"/>
+    </message>
+
+    <message name="konverzijaResponse">
+        <part name="return" type="tns:Currency"/>
+    </message>
+
+    <portType name="KonverzijaPort">
+        <operation name="konverzijaBAMToEUR">
+            <input message="tns:konverzijaRequest"/>
+            <output message="tns:konverzijaResponse"/>
+        </operation>
+        <operation name="konverzijaEURToBAM">
+            <input message="tns:konverzijaRequest"/>
+            <output message="tns:konverzijaResponse"/>
+        </operation>
+    </portType>
+
+    <binding name="KonverzijaBinding" type="tns:KonverzijaPort">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="konverzijaBAMToEUR">
+            <soap:operation soapAction="urn:HelloAction"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:Konverzije"
+                           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:Konverzije"
+                           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="konverzijaEURToBAM">
+            <soap:operation soapAction="urn:HelloAction"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:Konverzije"
+                           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:Konverzije"
+                           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+    </binding>
+
+    <service name="KonverzijeService">
+        <port name="KonverzijaPort" binding="tns:KonverzijaBinding">
+            <soap:address location="http://localhost/DZ/DZ003_001/server.php"/>
+        </port>
+    </service>
+
+</definitions>
