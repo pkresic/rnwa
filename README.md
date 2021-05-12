@@ -1,14 +1,14 @@
 # rnwa 
-instalacija__
+instalacija<br />
 
-XAMPP Control Panel__
-Visual Studio Code__
-PHP plugin__
-ASP.NET framework__
-NuGet Package Menager__
+XAMPP Control Panel<br />
+Visual Studio Code<br />
+PHP plugin<br />
+ASP.NET framework<br />
+NuGet Package Menager<br />
 
-pokretanje__
+pokretanje<br />
 
-Apache postavljen na folder od projektnog zadatka, npr u mom slučaju: DocumentRoot "C:\Users\Petra\Desktop\RNWA"__
-http://localhost/DZ/DZ003_003_1/client.php (URL za prvi zadatak)__
-http://localhost/DZ/DZ003_003_2/client.php ( URL za drugi zadatak)__
+Apache postavljen na folder od projektnog zadatka, npr u mom slučaju: DocumentRoot "C:\Users\Petra\Desktop\RNWA"<br />
+http://localhost/DZ/DZ003_003_1/client.php (URL za prvi zadatak)<br />
+http://localhost/DZ/DZ003_003_2/client.php ( URL za drugi zadatak)<br />
