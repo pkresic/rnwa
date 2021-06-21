@@ -1,0 +1,20 @@
+POST /Zaposlenici.asmx/SearchZaposlenik HTTP/1.1
+Host: localhost:44374
+Connection: keep-alive
+Content-Length: 13
+Cache-Control: max-age=0
+sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"
+sec-ch-ua-mobile: ?0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36
+Origin: http://localhost:44374
+Content-Type: application/x-www-form-urlencoded
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Referer: http://localhost:44374/Zaposlenici.asmx?op=SearchZaposlenik
+Accept-Encoding: gzip, deflate, br
+Accept-Language: hr-HR,hr;q=0.9,en-US;q=0.8,en;q=0.7,de;q=0.6,bs;q=0.5,it;q=0.4,sr;q=0.3
+Cookie: Idea-ea7a0550=7a953c53-c04e-446a-8dea-a964758b22b9
