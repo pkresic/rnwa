@@ -6,9 +6,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Contact extends Model
+class EmployeeDepartmentHistory extends Model
 {
     public $timestamps = false;
-    protected $primaryKey = 'ContactID';
-    protected $table = 'contact';
+    protected $table = 'employeedepartmenthistory';
 }

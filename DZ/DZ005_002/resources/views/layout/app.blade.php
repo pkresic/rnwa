@@ -10,16 +10,25 @@
 <div class="header">
     <div id="logo-field">
         <h2>AdventureWorks</h2>
+        @auth
+            <h6 class="username">{{Auth::user()->name}}</h6>
+        @endauth
     </div>
     <div id="login-field">
         <div class="buttons">
-            <div class="button">PRIJAVA</div>
-            <div class="button">REGSTRACIJA</div>
+            @auth
+                <a class="button" href="{{route('auth.logout')}}">ODJAVI SE</a>
+            @endauth
+            @guest
+                <a class="button" href="{{route('auth.google')}}">GMAIL</a>
+                <a class="button" href="{{route('login')}}">PRIJAVA</a>
+            @endguest
         </div>
     </div>
 </div>
 <div class="navbar">
     <a class="navbar-item" href='{{route('welcome')}}'>Početna</a>
+    <a class="navbar-item" href='{{route('employee.list')}}'>Employee</a>
     <a class="navbar-item" href='{{route('contact.list')}}'>Contact</a>
     <a class="navbar-item" href='{{route('address.list')}}'>Address</a>
     <a class="navbar-item" href='{{route('department.list')}}'>Department</a>

@@ -22,4 +22,11 @@ class AddressController extends Controller
                 'address' => Address::query()->findOrFail($id),
             ]);
     }
+
+    public function delete($id)
+    {
+        Address::destroy($id);
+        return redirect()
+            ->route('address.list');
+    }
 }
